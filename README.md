@@ -19,10 +19,12 @@ Following wobblecode projects, the default file tree is:
 - /docker/
   - nginx/
     - letsencrypt/
-      - config/
-        - production.sh
+      - domains/
+        - domain.com/
+          - production.sh
+          - domains.txt
     - ssl (out)
-      - domain.com
+      - domain.com/
         - fullchain.pem
         …
 ```
@@ -31,14 +33,13 @@ You can override any dehydrated parameter
 
 ## Run for renew
 
-You need to pass with -d the list of domains or set a domains.txt file in the
-same path as the config.sh file loaded
+Domains are defined in `domains.txt`in the same path as the
+config file, you can override with the arg -d Eg.
+`-d "domain.com www.domain.com`
 
 ```sh
-docker run \
--v ${PWD}/docker/nginx/:/docker/nginx \
-wobblecode/docker-dehydrated \
--d "wobblecode.com ws.wobblecode.com www.wobblecode.com"
+docker run -v ${PWD}/docker/nginx/:/docker/nginx wobblecode/docker-dehydrated \
+-f /docker/nginx/letsencrypt/domains/wobblecode.com/production.sh
 ```
 
 ## Build
