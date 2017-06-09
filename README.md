@@ -46,3 +46,10 @@ wobblecode/docker-dehydrated \
 ```sh
 docker build -t wobblecode/docker-dehydrated:latest .
 ```
+
+## Push
+
+```sh
+docker tag wobblecode/docker-dehydrated wobblecode/docker-dehydrated:latest
+docker push wobblecode/docker-dehydrated:latest
+```
