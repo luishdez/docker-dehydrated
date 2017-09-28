@@ -42,13 +42,15 @@ docker run -v ${PWD}/docker/nginx/:/docker/nginx wobblecode/docker-dehydrated \
 -f /docker/nginx/letsencrypt/domains/wobblecode.com/production.sh
 ```
 
-## Build
+## Hook Cloudflare
+
+## Docker Build
 
 ```sh
 docker build -t wobblecode/docker-dehydrated:latest .
 ```
 
-## Push
+## Docker Push
 
 ```sh
 docker tag wobblecode/docker-dehydrated wobblecode/docker-dehydrated:latest
