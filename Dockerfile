@@ -13,4 +13,4 @@ COPY hooks/ var/hooks/
 
 RUN pip3 install -r var/hooks/cloudflare/requirements.txt
 
-ENTRYPOINT ["dehydrated", "-c", "-f", "docker/ssl/letsencrypt/config/production.sh", "-o", "docker/ssl"]
+ENTRYPOINT ["dehydrated", "-c", "-f", "docker/ssl/letsencrypt/config/production.sh", "-o", "docker/ssl/domains"]
